@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | VCF Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <div class="dna">🧬</div>
+            <div>
+                <h1>VCF Analyzer</h1>
+                <p>Genomic Variant Analysis Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+
+        <section class="card auth-card">
+
+            <h2>Welcome Back</h2>
+
+            <p class="auth-description">
+                Log in to access your genomic variant analysis dashboard.
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('login') }}">
+
+                <input type="hidden"
+                       name="csrf_token"
+                       value="{{ csrf_token() }}">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                    autocomplete="username"
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password"
+                >
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="{{ url_for('register') }}">Create an account</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>VCF Analyzer | Genomic Variant Analysis</p>
+    </footer>
+
+</body>
+</html>

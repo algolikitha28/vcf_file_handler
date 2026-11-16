@@ -1,0 +1,755 @@
+
+/* =====================================
+   1. GLOBAL STYLES
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #243047;
+}
+
+
+/* =====================================
+   2. HEADER
+   ===================================== */
+
+.header {
+    background: #172554;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dna {
+    font-size: 35px;
+}
+
+.header h1 {
+    font-size: 23px;
+}
+
+.header p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* User account section */
+
+.account-menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.welcome-user {
+    color: #e2e8f0;
+    font-size: 14px;
+}
+
+.logout-btn {
+    color: white;
+    background: #dc2626;
+    padding: 10px 17px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =====================================
+   3. MAIN CONTAINER
+   ===================================== */
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   4. CARDS
+   ===================================== */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   5. VCF UPLOAD
+   ===================================== */
+
+.upload-area {
+    border: 2px dashed #93c5fd;
+    border-radius: 12px;
+    padding: 35px 15px;
+    text-align: center;
+    background: #f8fbff;
+}
+
+.upload-area.dragging {
+    background: #dbeafe;
+    border-color: #2563eb;
+}
+
+.upload-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.upload-area p {
+    color: #64748b;
+    margin: 12px 0;
+}
+
+#vcfFile {
+    display: none;
+}
+
+.browse-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.browse-btn:hover {
+    background: #1d4ed8;
+}
+
+.file-limit {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 15px;
+}
+
+.file-info {
+    margin: 15px 0;
+    color: #2563eb;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   6. BUTTONS
+   ===================================== */
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =====================================
+   7. MESSAGES
+   ===================================== */
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.success {
+    color: #15803d;
+}
+
+.error {
+    color: #dc2626;
+}
+
+.warning {
+    color: #b45309;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =====================================
+   8. SECTION HEADINGS
+   ===================================== */
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin-bottom: 8px;
+}
+
+.section-heading span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   9. SUMMARY CARDS
+   ===================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    margin-top: 12px;
+    font-size: 30px;
+    color: #1d4ed8;
+}
+
+
+/* =====================================
+   10. QUALITY ASSESSMENT
+   ===================================== */
+
+.quality-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.quality-item {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 9px;
+}
+
+.quality-item p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.quality-item h2 {
+    margin-top: 8px;
+}
+
+.pass h2 {
+    color: #15803d;
+}
+
+.filtered h2 {
+    color: #d97706;
+}
+
+.unfiltered h2 {
+    color: #64748b;
+}
+
+
+/* =====================================
+   11. CHARTS
+   ===================================== */
+
+.chart-container {
+    position: relative;
+    max-width: 650px;
+    margin: 25px auto;
+    height: 280px;
+}
+
+
+/* =====================================
+   12. TABLES
+   ===================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+th {
+    background: #f8fafc;
+    color: #172554;
+    white-space: nowrap;
+}
+
+td {
+    color: #475569;
+}
+
+
+/* =====================================
+   13. VARIANT ANNOTATIONS
+   ===================================== */
+
+.annotation-description {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.annotation-summary {
+    color: #2563eb;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+#annotationTable td {
+    white-space: nowrap;
+}
+
+#annotationTable td:nth-child(4) {
+    white-space: normal;
+}
+
+
+/* =====================================
+   14. CIViC CLINICAL EVIDENCE
+   ===================================== */
+
+.civic-card {
+    margin-top: 25px;
+}
+
+.civic-card > p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.civic-results {
+    margin-top: 25px;
+}
+
+.civic-variant-card {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 18px;
+    background: #ffffff;
+}
+
+.civic-variant-card h4 {
+    color: #172554;
+    font-size: 17px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.civic-profile-card {
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.civic-profile-card h5 {
+    font-size: 16px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.civic-profile-card a {
+    display: inline-block;
+    margin: 8px 0 12px;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.civic-profile-card a:hover {
+    text-decoration: underline;
+}
+
+.civic-evidence-item {
+    border: 1px solid #e2e8f0;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.civic-evidence-item h6 {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #172554;
+}
+
+.civic-evidence-item p {
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 7px;
+    overflow-wrap: anywhere;
+}
+
+.civic-disclaimer {
+    margin-top: 20px;
+    padding: 14px;
+    background: #fff7ed;
+    border-radius: 6px;
+    border-left: 4px solid #f59e0b;
+    color: #9a3412;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   15. AUTHENTICATION PAGES
+   ===================================== */
+
+.auth-container {
+    width: 90%;
+    max-width: 460px;
+    margin: 65px auto;
+}
+
+.auth-card {
+    padding: 35px;
+}
+
+.auth-card h2 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.auth-description {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.auth-card form label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.auth-card form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+}
+
+.auth-card form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #dbeafe;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.auth-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   16. FOOTER
+   ===================================== */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   17. RESPONSIVE DESIGN
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quality-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .header {
+        padding: 18px 4%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .account-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .auth-container {
+        margin: 35px auto;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .auth-card {
+        padding: 22px;
+    }
+
+    .civic-variant-card {
+        padding: 12px;
+    }
+
+    .civic-profile-card {
+        padding: 12px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+}
+
+
+/* =====================================
+   AUTHENTICATION PAGES
+===================================== */
+
+.auth-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 60px auto;
+}
+
+.auth-card {
+    padding: 35px;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #172554;
+}
+
+.auth-description {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.auth-card label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.auth-switch a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   DASHBOARD USER HEADER
+===================================== */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.welcome-user {
+    color: white;
+    font-size: 14px;
+}
+
+.logout-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+.header-user form {
+    margin: 0;
+}
+
+
+/* =====================================
+   RESPONSIVE AUTHENTICATION
+===================================== */
+
+@media (max-width: 600px) {
+
+    .header-user {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .welcome-user {
+        font-size: 12px;
+    }
+
+    .auth-card {
+        padding: 22px;
+    }
+
+}

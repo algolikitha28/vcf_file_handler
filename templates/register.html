@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | VCF Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <div class="dna">🧬</div>
+            <div>
+                <h1>VCF Analyzer</h1>
+                <p>Genomic Variant Analysis Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+
+        <section class="card auth-card">
+
+            <h2>Create Your Account</h2>
+
+            <p class="auth-description">
+                Register to start analyzing your VCF files.
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('register') }}">
+
+                <input type="hidden"
+                       name="csrf_token"
+                       value="{{ csrf_token() }}">
+
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                    minlength="2"
+                    autocomplete="username"
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                    minlength="8"
+                    autocomplete="new-password"
+                >
+
+                <label for="confirm_password">Confirm Password</label>
+
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="Re-enter your password"
+                    required
+                    minlength="8"
+                    autocomplete="new-password"
+                >
+
+                <button type="submit" class="primary-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="{{ url_for('login') }}">Login here</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>VCF Analyzer | Genomic Variant Analysis</p>
+    </footer>
+
+</body>
+</html>

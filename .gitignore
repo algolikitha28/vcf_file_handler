@@ -1,0 +1,72 @@
+
+# ==================================
+# Environment variables and secrets
+# ==================================
+.env
+.env.*
+!.env.example
+
+# ==================================
+# Python cache files
+# ==================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==================================
+# Virtual environments
+# ==================================
+venv/
+env/
+vcf_env/
+.venv/
+
+# ==================================
+# Flask instance and database files
+# ==================================
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# ==================================
+# Uploaded VCF files
+# ==================================
+uploads/*
+!uploads/.gitkeep
+
+# ==================================
+# Temporary files and logs
+# ==================================
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+
+# ==================================
+# IDE and editor files
+# ==================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==================================
+# Operating system files
+# ==================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==================================
+# Test and coverage files
+# ==================================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==================================
+# Jupyter files
+# ==================================
+.ipynb_checkpoints/
